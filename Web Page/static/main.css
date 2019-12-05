@@ -27,6 +27,11 @@ body {
   text-align: center;
 }
 
+.resTit {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .relApps {
   text-align: center;
   color: #252626;

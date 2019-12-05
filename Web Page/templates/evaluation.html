@@ -26,28 +26,28 @@
       <h3>Recommended for your app:</h3>
       <div class="resultContainer">
         <div class="addResults">
-          <p>Age rating:</p>
+          <p class="resTit">Age rating:</p>
           <h3>{{ age_avg }}</h3>
         </div>
         <div class="addResults">
           {% if genre_def == 1 %}
-            <p>Genre:</p>
+            <p class="resTit">Genre:</p>
             <h3>{{ gen_app[0] }}</h3>
           {% else %}
-            <p>Genres:</p>
+            <p class="resTit">Genres:</p>
             {% for gen in gen_app %}
               <h3>{{ gen }}</h3>
             {% endfor %}
           {% endif %}
         </div>
         <div class="addResults">
-          <p>Categories:</p>
+          <p class="resTit">Categories:</p>
           {% for categ in categ_list %}
             <p class="categClass">{{ categ }}</p>
           {% endfor %}
         </div>
         <div class="addResults">
-          <p>Free or Paid:</p>
+          <p class="resTit">Free or Paid:</p>
           <p>{{ app_free }}% of the similar apps are free<br>The average price is: {{ price_avg }}<br>The max price is: {{ max_price }}</p>
         </div>
       </div>
