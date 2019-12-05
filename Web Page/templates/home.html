@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>App Evaluator :: Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}"/>
+  </head>
+  <body>
+    <h1 class="AppEvalTitle">App Evaluator</h1>
+    <div class="eval">
+      <form class="evalForm" action="/evaluation" method="post">
+        <p>App Title<br><input type="text" name="appTitle" placeholder="App Title"></p>
+        <p>App Description<br><input type="text" name="appDesc" maxlength="auto" placeholder="App Description" size="70%"></p>
+        <p><input type="submit" name="submit"></p>
+      </form>
+    </div>
+    <div class="animation">
+      <ul class="box-area">
+        <li><img src={{top_apps[0].icon_url}}></li>
+        <li><img src={{top_apps[1].icon_url}}></li>
+        <li><img src={{top_apps[2].icon_url}}></li>
+        <li><img src={{top_apps[3].icon_url}}></li>
+        <li><img src={{top_apps[4].icon_url}}></li>
+        <li><img src={{top_apps[5].icon_url}}></li>
+        <li><img src={{top_apps[6].icon_url}}></li>
+        <li><img src={{top_apps[7].icon_url}}></li>
+        <li><img src={{top_apps[8].icon_url}}></li>
+        <li><img src={{top_apps[9].icon_url}}></li>
+      </ul>
+    </div>
+  </body>
+</html>

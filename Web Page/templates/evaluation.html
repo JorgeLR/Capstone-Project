@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>App Evaluator :: Evaluation</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}"/>
+  </head>
+  <body>
+    <article class="evalResult">
+      <div class="theApp">
+        <h2>Evaluation for:<br>{{ evalT }}</h2>
+        <p>{{ evalD[:1000] }}...</p>
+      </div>
+      <div class="theResult">
+        {% if avg_rate >= 4.0 %}
+          <h3>{{ avg_rate }}</h3>
+          <h3>Your App is predicted to be succesful!!!</h3>
+        {% else %}
+          <h4>{{ avg_rate }}</h4>
+          <p>Put some more work into your App</p>
+        {% endif %}
+      </div>
+    </article>
+    <div class="recommendations">
+      <h3>Recommended for your app:</h3>
+      <div class="resultContainer">
+        <div class="addResults">
+          <p>Age rating:</p>
+          <h3>{{ age_avg }}</h3>
+        </div>
+        <div class="addResults">
+          {% if genre_def == 1 %}
+            <p>Genre:</p>
+            <h3>{{ gen_app[0] }}</h3>
+          {% else %}
+            <p>Genres:</p>
+            {% for gen in gen_app %}
+              <h3>{{ gen }}</h3>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="addResults">
+          <p>Categories:</p>
+          {% for categ in categ_list %}
+            <p class="categClass">{{ categ }}</p>
+          {% endfor %}
+        </div>
+        <div class="addResults">
+          <p>Free or Paid:</p>
+          <p>{{ app_free }}% of the similar apps are free<br>The average price is: {{ price_avg }}<br>The max price is: {{ max_price }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="relApps">
+      <h3>Related Apps</h3>
+    </div>
+    <div class="grid-container">
+        {% for name in the_list %}
+          <div class="grid-item">
+            <img src={{name.icon_url}} width="60px" height="auto"><br>
+            <a href={{name.url}}>{{ name.name }}</a>
+            <p>{{ name.average_user_rating }}</p>
+          </div>
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="reEvalLink">
+      <a href="/">Evaluate Another App</a>
+    </div>
+  </body>
+</html>
